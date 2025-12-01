@@ -1,4 +1,5 @@
 the-planet {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
@@ -13,6 +14,18 @@ the-planet {
     overflow: hidden;
     position: relative;
     z-index: 1;
+}
+
+.shine {
+    height: 1px;
+    position: absolute;
+    left: 100px;
+    bottom: 150px;
+    width: calc(100% - 200px);
+    z-index: 1;
+    background: linear-gradient(to right, transparent 0%, rgba(139, 224, 255, 0.5) 50%, transparent 100%);
+    box-shadow: 0px 1px 110px 30px #5e90f1;
+    filter: blur(10px);
 }
 
 .day {
@@ -54,6 +67,7 @@ the-planet {
     0% { background-position: 120% 0; }
     100% { background-position: -80% 0; }
 }
+
 @keyframes spin-clouds {
     0% { transform: rotate(0deg); }
     50% { transform: rotate(-45deg); }
