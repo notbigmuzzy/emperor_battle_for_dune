@@ -1,0 +1,61 @@
+the-planet {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-grow: 9;
+}
+
+.planet-container {
+    border-radius: 50%;
+    box-shadow: 0px 1px 110px 30px #5e90f1;
+    height: 400px;
+	width: 400px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.day {
+    animation: rotate-day 200s linear infinite;
+    background-image: url('assets/images/planet.jpg');
+    background-size: 200%;
+    border-left: solid 1px black;
+    height: 400px;
+    margin-left: 0;
+    position: absolute;
+    width: 400px;
+    z-index: 3;
+}
+
+.clouds {
+    animation: rotate-day 80s linear infinite reverse, spin-clouds 100s ease infinite;
+    background-image: url('assets/images/clouds.jpg');
+    background-size: 200%;
+    height: 400px;
+    margin-left: -15px;
+    opacity: 0.45;
+    position: absolute;
+    width: 400px;
+    z-index: 4;
+}
+
+.inner-shadow {
+    background: 
+        radial-gradient(circle at top left, transparent 0%, transparent 40%, #000 100%),
+        linear-gradient(to top left, #000 0%, transparent 35%);
+    height: 400px;
+    margin-left: 0;
+    position: absolute;
+    width: 400px;
+    z-index: 5;
+}
+
+@keyframes rotate-day {
+    0% { background-position: 120% 0; }
+    100% { background-position: -80% 0; }
+}
+@keyframes spin-clouds {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
